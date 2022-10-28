@@ -24,4 +24,10 @@ public class Wait {
     public void waitForElementToBeSelected(By locator){
         wait.until(ExpectedConditions.elementToBeSelected(locator));
     }
+
+    public void waitForvisibilityOfElementLocated(By locator){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+
 }
