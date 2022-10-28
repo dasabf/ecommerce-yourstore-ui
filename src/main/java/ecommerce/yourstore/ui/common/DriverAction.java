@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class DriverAction {
     private WebDriver driver;
@@ -31,5 +32,15 @@ public class DriverAction {
     public String getText(By locator){
         WebElement element = driver.findElement(locator);
         return element.getText();
+    }
+
+    public void selectDropDownByVisibleText(By locator, String message){
+        Select dropDown = new Select(driver.findElement(locator));
+        dropDown.selectByVisibleText(message);
+    }
+
+    public void selectDropDownByIndex(By locator, int index){
+        Select dropDown = new Select(driver.findElement(locator));
+        dropDown.deselectByIndex(index);
     }
 }
